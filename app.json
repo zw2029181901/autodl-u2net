@@ -1,0 +1,32 @@
+{
+  "id": "05-u2net-cutout",
+  "slug": "autodl-u2net",
+  "name": "U2Net 抠图",
+  "description": "自动去除图片背景，导出透明PNG，可选择精细边缘处理。",
+  "task": "background-removal",
+  "torch": false,
+  "requires_gpu": false,
+  "imports": [
+    "rembg",
+    "onnxruntime"
+  ],
+  "model_gb": 0.176,
+  "disk_gb": 1,
+  "gpu": "使用CPU ONNX，不依赖GPU。建议4GB内存起测。",
+  "license": "Apache-2.0（U2Net）；MIT（rembg）",
+  "source": "https://github.com/xuebinqin/U-2-Net",
+  "models": {
+    "main": {
+      "kind": "asset",
+      "filename": "u2net.onnx",
+      "url": "https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net.onnx",
+      "bytes": 175997641,
+      "md5": "60024c5c889badc19c04ad937298a77b"
+    }
+  },
+  "account": {
+    "github": "zw2029181901",
+    "autodl_user": "200211"
+  }
+}
+
