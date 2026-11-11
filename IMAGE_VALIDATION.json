@@ -1,0 +1,45 @@
+{
+  "verified_at": "2026-11-11T22:33:43+08:00",
+  "image_uuid": "image-16318c587c",
+  "image_name": "autodl-u2net-20261111",
+  "image_identity_source": "User saved-image screenshot and creation of this new instance",
+  "instance_hostname": "autodl-container-9m0gzquufl-fcf3a751",
+  "hardware": "NVIDIA GeForce RTX 3080 Ti, 12288 MiB, 595.71.05",
+  "inference_provider": "CPUExecutionProvider",
+  "container_started": "Wed Nov 11 22:29:33 2026",
+  "service_started": "Wed Nov 11 22:29:33 2026",
+  "seconds_after_container_start": 0.3,
+  "manual_start_or_install_or_model_download_issued": false,
+  "original_data_disk_models_absent": true,
+  "model_integrity": {
+    "bytes": 175997641,
+    "md5": "60024c5c889badc19c04ad937298a77b",
+    "status": "passed"
+  },
+  "offline_settings": {
+    "MODEL_ROOT": "/root/autodl-active/models",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1"
+  },
+  "http_inference": {
+    "http": "passed",
+    "upload_inference_download": "passed",
+    "mode": "RGBA",
+    "size": [
+      512,
+      512
+    ],
+    "elapsed_seconds": 38.427,
+    "response_files": [
+      "/tmp/gradio/df7d085f1d2bcb6b5f95278264ce12c41b817a899a6a9c361d7739f011eecee8/image.webp",
+      "/tmp/gradio/c0b4410924be063f4589aad0684aca1a80670bb188e296b802dbec12a23b0554/20261111-223132-31afb4141f23.png"
+    ],
+    "model_root": "/root/autodl-active/models",
+    "offline": true
+  },
+  "platform_image_saved": true,
+  "restored_image_verified": true,
+  "published": false,
+  "account_image_usage_gb_from_user_screenshot": 6.91,
+  "free_quota_remaining_gb": 23.09
+}
