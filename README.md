@@ -2,7 +2,19 @@
 
 自动去除图片背景，导出透明PNG，可选择精细边缘处理。
 
-这是独立应用源码及部署脚本，不是已经上传的AutoDL云镜像。模型版本固定在 `app.json`。本包没有模型权重；下载来源、校验信息和许可均列在配置与 THIRD_PARTY.md。
+本仓库提供独立应用源码及部署脚本，模型版本固定在 `app.json`。源码仓库不包含模型权重；已保存的AutoDL镜像内包含权重、独立运行环境和开机配置。
+
+## 使用已准备好的镜像
+
+镜像：`autodl-u2net-20261111`（`image-16318c587c`），平台显示3.09GB。已通过从保存镜像创建全新实例的自动启动、模型完整性与真实HTTP推理验证，证据见 [IMAGE_VALIDATION.json](IMAGE_VALIDATION.json)。公开发布状态以平台为准。
+
+创建并启动实例后，直接打开“自定义服务6006”，上传图片并下载透明PNG。源码位于 `/root/autodl-active`，模型位于 `/root/autodl-active/models`，无需重新安装或下载。镜像说明见 [IMAGE_README.md](IMAGE_README.md)。
+
+实例内环境检查命令：
+
+```bash
+/root/autodl-active/.venv/bin/python /root/autodl-active/runtime/doctor.py --project /root/autodl-active --models --http
+```
 
 ## 环境与空间
 
@@ -14,7 +26,7 @@
 
 ## 独立包部署
 
-以下命令在AutoDL的Linux终端执行，不是在Windows执行。项目仓库为 `zw2029181901/autodl-u2net`；云镜像的部署和发布仍需完成后续验收。
+以下用于从源码另行安装；已使用上述镜像的用户直接打开6006即可。命令在AutoDL的Linux终端执行，项目仓库为 `zw2029181901/autodl-u2net`。
 
 ```bash
 cd /root
@@ -36,13 +48,11 @@ bash start.sh
 
 ## 模型和保存镜像
 
-默认把模型放在 `/root/autodl-tmp/autodl-models`（数据盘存在时）。**保存镜像只保存系统盘，数据盘模型不会随镜像分发。** 用户首次运行需要重新下载，或你配置并验证有效的公共模型目录。
-按本次30GB账户总额度要求，不把权重复制到系统盘。优先使用已核实的公共模型目录，具体见 MODEL_STORAGE.md；Wan默认禁用自动下载。
-系统盘安装依赖仍会增加镜像容量，不能仅凭不含权重就保证10份镜像都在账户剩余额度内。每保存一份要查看平台合计容量。
-也可用 `MODEL_PATH_MAIN=/实际模型快照目录` 指向已存在的Hugging Face格式目录（仅适用本包kind=hf模型），或用link_model.py保存该路径。CPU可用的工具默认安装CPU版PyTorch，选择CUDA环境后才使用GPU。
-权重不会自动由网址变成零占用。公共路径必须实际存在。
+源码安装时，模型优先放入 `MODEL_ROOT` 指定目录或项目内已有的 `models` 目录，否则使用 `/root/autodl-tmp/autodl-models`。保存镜像只保存系统盘，数据盘模型不会随镜像分发。
+
+本次已保存镜像将约176MB的U2Net模型打包在系统盘 `/root/autodl-active/models`，新实例无需再次下载。模型和输出建议预留空间见 MODEL_STORAGE.md；镜像计费容量以平台为准，每保存一份都应核对账号总额度。
 
 ## 验收与发布
 
-看 SMOKE_TEST.md、PUBLICATION.md 和 UPLOAD_GUIDE.md。本地网页启动通过不等于云端GPU推理通过。正式公开前至少完成真实任务、新实例复建与开机启动测试。
+看 SMOKE_TEST.md、PUBLICATION.md、IMAGE_README.md 和 IMAGE_VALIDATION.json。本次镜像已通过真实任务、新实例复建与开机启动测试；公开上架及审核以平台当前状态为准。
 安装会保存 `installed-requirements.txt`，请在云端验收后保留它作为该镜像的依赖记录。没有自动更新依赖或模型的后台任务。
