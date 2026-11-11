@@ -9,7 +9,7 @@
 | AutoDL.Art账号 | 200211（金鳞） |
 | 介绍 | 自动去除图片背景，导出透明PNG，可选择精细边缘处理。 |
 | 服务端口 | 6006 |
-| 启动命令 | bash /root/autodl-u2net/start.sh |
+| 本批导出镜像启动命令 | bash /root/autodl-active/run-service.sh |
 | 模型容量 | 约0.176GB；模型及输出预留1GB，依赖另计 |
 | 上游 | https://github.com/xuebinqin/U-2-Net |
 | 许可 | Apache-2.0（U2Net）；MIT（rembg） |
