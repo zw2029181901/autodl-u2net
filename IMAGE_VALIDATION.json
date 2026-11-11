@@ -40,6 +40,10 @@
   "platform_image_saved": true,
   "restored_image_verified": true,
   "published": false,
+  "review_submitted": true,
+  "review_status": "pending",
+  "community_url": "https://www.autodl.art/i/zw2029181901/autodl-u2net/U2Net-Cutout",
+  "review_checked_at": "2026-11-12T00:26:47.8748010+08:00",
   "account_image_usage_gb_from_user_screenshot": 6.91,
   "free_quota_remaining_gb": 23.09
 }

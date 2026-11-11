@@ -2,6 +2,8 @@
 
 自动去除图片背景，导出透明PNG，可选择精细边缘处理。
 
+AutoDL.Art：[U2Net-Cutout](https://www.autodl.art/i/zw2029181901/autodl-u2net/U2Net-Cutout)。v1已提交审核，等待平台通过后开放创建实例。
+
 本仓库提供独立应用源码及部署脚本，模型版本固定在 `app.json`。源码仓库不包含模型权重；已保存的AutoDL镜像内包含权重、独立运行环境和开机配置。
 
 ## 使用已准备好的镜像
